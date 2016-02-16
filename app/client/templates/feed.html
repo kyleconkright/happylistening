@@ -1,0 +1,16 @@
+<template name="feed">
+	{{#each post}}
+		<div class="post">
+			<div class="border"></div>
+			{{#if video}}
+			<video controls loop poster="{{src}}">
+			  <source src={{video}} type="video/mp4">
+			</video>
+			{{else}}
+			<a href="{{link}}" target="_blank"><img src="{{src}}"></a>
+			{{/if}}
+			<p>{{caption}}</p>
+			
+		</div>
+	{{/each}}
+</template>
