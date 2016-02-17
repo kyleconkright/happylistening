@@ -1,28 +1,58 @@
 var getFeed = function(){
-	InstagramFetcher.fetchUserInfo({ userId: '239381321' }, function(images){
+	InstagramFetcher.fetchImages.fromTag({ tagName: 'musicfactmonday' }, function(images){
+		console.log(images);
 		for(var i = 0; i < images.length; i++) {
-		// if(images[i].user.username == 'soundfreaq') {
-			var src = images[i].images.standard_resolution.url;
-			var link = images[i].link;
-			var createdAt = images[i].created_time;
-			var username = images[i].user.username;
-			var caption = images[i].caption.text;
-			if(images[i].videos) {
-				var video = images[i].videos.standard_resolution.url;
-			} else {
-				var video = null;
+			if(images[i].user.username == 'soundfreaq') {
+				var src = images[i].images.standard_resolution.url;
+				var link = images[i].link;
+				var createdAt = images[i].created_time;
+				var username = images[i].user.username;
+				var caption = images[i].caption.text;
+				if(images[i].videos) {
+					var video = images[i].videos.standard_resolution.url;
+				} else {
+					var video = null;
+				}
+				
+				var data = {
+				    src: src,
+				    link: link,
+				    username: username,
+				    caption: caption,
+				    video: video,
+				    createdAt: createdAt
+				}
+				Posts.update(data, { $setOnInsert: data },{ upsert: true });
 			}
-			
-			var data = {
-			    src: src,
-			    link: link,
-			    username: username,
-			    caption: caption,
-			    video: video,
-			    createdAt: createdAt
+		}
+	});
+
+
+	InstagramFetcher.fetchImages.fromTag({ tagName: 'happylistening' }, function(images){
+		console.log(images);
+		for(var i = 0; i < images.length; i++) {
+			if(images[i].user.username == 'soundfreaq') {
+				var src = images[i].images.standard_resolution.url;
+				var link = images[i].link;
+				var createdAt = images[i].created_time;
+				var username = images[i].user.username;
+				var caption = images[i].caption.text;
+				if(images[i].videos) {
+					var video = images[i].videos.standard_resolution.url;
+				} else {
+					var video = null;
+				}
+				
+				var data = {
+				    src: src,
+				    link: link,
+				    username: username,
+				    caption: caption,
+				    video: video,
+				    createdAt: createdAt
+				}
+				Posts.update(data, { $setOnInsert: data },{ upsert: true });
 			}
-			Posts.update(data, { $setOnInsert: data },{ upsert: true });
-		// }
 		}
 	});
 } 
