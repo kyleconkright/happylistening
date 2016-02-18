@@ -1,14 +1,52 @@
 * {
 	margin: 0;
 	padding: 0;
+	text-decoration: none;
+	list-style-type: none;
+	color: inherit;
+	box-sizing: border-box;
 }
 
 body {
 	font-family: Lato, helvetica neue;
 	font-weight: 400;
-	.top {
-		height: 3px;
-		background: linear-gradient(45deg, #e99a6a, #b293c0);
+}
+
+nav {
+	display: flex;
+	background: #f9f9f9;
+	font-size: .9em;
+	color: #777;
+	> * {
+		flex: 1; padding: 1% 4%;
+		a {
+			display: inline-block;
+		}
+	}
+	div.logo {
+		a {
+			text-transform: uppercase;
+			font-weight: 900;
+			font-family: helvetica neue;
+			letter-spacing: .125em;
+			background: linear-gradient(215deg, #e99a6a, #23b3b4);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+	div.menu {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			li {
+				padding: 0 0 0 2%;
+				a {
+					letter-spacing: .05em;
+					font-size: .9em;
+				}
+			}
+		}
 	}
 }
 
@@ -16,12 +54,10 @@ header {
 	text-align: center;
 	padding: 4% 4% 0;
 	font-size: 1.25em;
-	h1,span, p {
+	color: #da9881;
+	text-align: center;
+	span {
 		display: block;
-		background: linear-gradient(90deg, #e99a6a, #b293c0);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		text-align: center
 	}
 	h1 {
 		font-size: 2.5em;
@@ -30,8 +66,9 @@ header {
 	p {
 		font-size: .8em;
 		a {
-			border-bottom: 1px solid #d09792;
+			border-bottom: 1px solid;
 			font-weight: 700;
+			color: #23b3b4;
 		}
 	}
 }
@@ -39,17 +76,18 @@ header {
 div#feed {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 2%;
+	padding: 2% 8%;
+	justify-content: center;
 	.post {
 		padding: 2%;
-		flex-basis: 21%;
+		flex-basis: 33.33333%;
 		div.border {
 			height: 3px;
-			background: linear-gradient(45deg, #e99a6a, #b293c0);
+			background: #f6f6f6;
 		}
 		img, video {
 			width: 100%;
-			padding: 6% 0 0;
+			padding: 12px 0 0;
 		}
 		p {
 			margin: 2% 0 0;
@@ -61,18 +99,28 @@ div#feed {
 } /*FEED*/
 
 
-@media (max-width: 920px) {
-  #feed {
-  	.post {
-  		flex-basis: 29.333333%;
-  	}
-  }
+@media (max-width: 769px) {
+	nav {
+		> * {
+			padding: 2% 4%;
+		}
+	}
+	div#feed {
+		justify-content: flex-start;
+		.post {
+			flex-basis: 50%;
+		}
+	}
 }
 
 @media (max-width: 414px) {
-  #feed {
-  	.post {
-  		flex-basis: 46%;
-  	}
-  }
+	body {
+		font-size: .9em;
+	}
+	div#feed {
+		.post {
+			flex-grow: 1;
+			flex-basis: 100%;
+		}
+	}
 }
