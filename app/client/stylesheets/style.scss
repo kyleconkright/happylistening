@@ -15,7 +15,7 @@ body {
 nav {
 	display: flex;
 	background: #f9f9f9;
-	font-size: .9em;
+	font-size: 1em;
 	color: #777;
 	> * {
 		flex: 1; padding: 1% 4%;
@@ -29,7 +29,7 @@ nav {
 			font-weight: 900;
 			font-family: helvetica neue;
 			letter-spacing: .125em;
-			background: linear-gradient(215deg, #e99a6a, #23b3b4);
+			background: linear-gradient(215deg, #a5a384, #23b3b4);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 		}
@@ -43,7 +43,7 @@ nav {
 				padding: 0 0 0 2%;
 				a {
 					letter-spacing: .05em;
-					font-size: .9em;
+					font-size: .85em;
 				}
 			}
 		}
@@ -77,7 +77,6 @@ div#feed {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 2% 8%;
-	justify-content: center;
 	.post {
 		padding: 2%;
 		flex-basis: 33.33333%;
@@ -87,12 +86,13 @@ div#feed {
 		}
 		img, video {
 			width: 100%;
-			padding: 12px 0 0;
+			margin: 12px 0 0;
+			border-radius: 2px;
 		}
 		p {
 			margin: 2% 0 0;
 			font-size: .85em;
-			color: #333;
+			color: #3f3f3f;
 			line-height: 1.5em;
 		}
 	}
@@ -106,7 +106,6 @@ div#feed {
 		}
 	}
 	div#feed {
-		justify-content: flex-start;
 		.post {
 			flex-basis: 50%;
 		}
