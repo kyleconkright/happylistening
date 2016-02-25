@@ -1,5 +1,5 @@
 Template.feed.helpers({
-  'post': function() {
+  post() {
     return Posts.find({}, {sort: {createdAt: -1}});
   }
 });
