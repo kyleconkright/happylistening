@@ -25,13 +25,10 @@ nav {
 	}
 	div.logo {
 		a {
-			text-transform: uppercase;
-			font-weight: 900;
-			font-family: helvetica neue;
-			letter-spacing: .125em;
-			background: linear-gradient(215deg, #a5a384, #23b3b4);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+			img {
+				height: 12px;
+				opacity: .85;
+			}
 		}
 	}
 	div.menu {
