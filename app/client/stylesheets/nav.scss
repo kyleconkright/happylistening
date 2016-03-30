@@ -1,0 +1,42 @@
+@import "mixins";
+
+nav {
+	display: flex;
+	background: #f9f9f9;
+	font-size: 1em;
+	color: #777;
+	> * {
+		flex: 1;
+		padding: 1% 4%;
+		a {
+			display: inline-block;
+		}
+	}
+	div.logo {
+		a {
+			img {
+				height: 12px;
+				opacity: .85;
+			}
+		}
+	}
+	div.menu {
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			li {
+				padding: 0 0 0 2%;
+				a {
+					letter-spacing: .05em;
+					font-size: .85em;
+				}
+			}
+		}
+	}
+	@include tablet {
+		> * {
+			padding: 2% 4%;
+		}	
+	}
+}
