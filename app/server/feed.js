@@ -22,6 +22,7 @@ getFeed = (tag) => {
 				    createdAt: createdAt
 				}
 				Posts.update(data, { $setOnInsert: data },{ upsert: true });
+				console.log(images[i].location);
 			}
 		}
 	});
