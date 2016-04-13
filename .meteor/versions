@@ -16,6 +16,7 @@ caching-compiler@1.0.2
 caching-html-compiler@1.0.4
 callback-hook@1.0.6
 check@1.1.2
+dburles:google-maps@1.1.5
 ddp@1.2.3
 ddp-client@1.2.3
 ddp-common@1.2.3
